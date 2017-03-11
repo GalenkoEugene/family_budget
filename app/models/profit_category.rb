@@ -1,0 +1,2 @@
+class ProfitCategory < ApplicationRecord
+end
