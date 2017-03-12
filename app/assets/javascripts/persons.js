@@ -6,8 +6,9 @@ $(document).ready(function() {
 		  method: "POST",
 		  url: "/persons/search/",
 		  data: $(this).parent().serialize(),
-		    success: function(r) { 
-		    	$("#search_rezult").after(r);           
+		    success: function(r) {
+		    	$("#search_rezult").children().remove();
+		    	$("#search_rezult").append(r);           
 		    }         
 		})
 		  .error(function (a) {
