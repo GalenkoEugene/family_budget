@@ -1,2 +1,10 @@
 <h1>Persons#profile</h1>
 <p>Find me in app/views/persons/profile.html.erb</p>
+
+<%= form_tag({controller: "persons", action: "search"}, method: "post", class: "nifty_form", remote: true) do %>
+  <%= label_tag(:f, "Search for:") %>
+  <%= text_field_tag(:f) %>
+  <%= submit_tag "Search", id: "search" %>
+<% end %>
+
+<p id="search_rezult">Результат поиска:</p>
