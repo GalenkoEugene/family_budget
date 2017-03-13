@@ -1,10 +1,17 @@
 <h1>Личный кабинет</h1>
 <p>Find me in app/views/persons/profile.html.erb</p>
 
-<%= form_tag(remote: true) do %>
+
+<%= form_tag("/families/new_family", method: "post", remote: true, id: "new_family" ) do %>
+  <%= label_tag(:name, "Создать семью:") %>
+  <%= text_field_tag :name, "", :placeholder => "Введите имя семьи.." %>
+  <%= submit_tag "Create" %>
+<% end %>
+<br>
+<%= form_tag("/families/search", method: "post", remote: true, id: "search" ) do %>
   <%= label_tag(:f, "Найти семью:") %>
   <%= text_field_tag :f, "", :placeholder => "Введите имя семьи.." %>
-  <%= submit_tag "Search", id: "search" %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <p >Результат поиска:</p>

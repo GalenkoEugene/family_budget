@@ -1,11 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Пет проэкт: "Семейный бюджет"
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version is 2.4.
+
+* Rails version is 5.0.2
 
 * System dependencies
 
@@ -22,3 +23,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+http://blog.bigbinary.com/2016/02/15/rails-5-makes-belong-to-association-required-by-default.html /*как убрать validation presence true у связи belongs_to */
