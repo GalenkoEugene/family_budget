@@ -1,0 +1,18 @@
+<h1>add</h1>
+<%= form_tag("/profits/add", method: "post", remote: true, id: "add_profit" ) do %>
+	<%= text_field_tag :name, "", :placeholder => "Сумма", class: "form-control" %>
+
+
+
+  <%= radio_button :contactmethod, 'email', :checked => true %> 
+  <%= label :contactmethod_email, 'Основной' %>
+
+  <%= radio_button :contactmethod, 'email', :checked => true %> 
+  <%= label :contactmethod_email, 'Пассивный' %>
+  
+  <%= radio_button :contactmethod, 'email', :checked => true %> 
+  <%= label :contactmethod_email, 'Прочее' %>
+
+
+	<%= submit_tag "Сохранить", class: "btn" %>
+<% end %>

@@ -1,26 +1,26 @@
 <h1>Личный кабинет</h1>
 
 
-<div class="family_add_show">
-	<% if current_user.family_id? %>
-		<p>Твоя семья: <%= Family.find(current_user.family_id).name %></p>
-	<% else %>
-		<%= form_tag("/families/new_family", method: "post", remote: true, id: "new_family" ) do %>
-		  <%= label_tag(:name, "Создать семью:") %>
-		  <%= text_field_tag :name, "", :placeholder => "Введите имя семьи.." %>
-		  <%= submit_tag "Create" %>
+	<div class="family_add_show">
+		<% if current_user.family_id? %>
+			<p>Твоя семья: <%= Family.find(current_user.family_id).name %></p>
+		<% else %>
+			<%= form_tag("/families/new_family", method: "post", remote: true, id: "new_family" ) do %>
+			  <%= label_tag(:name, "Создать семью:", class: "form-control-label") %>
+			  <%= text_field_tag :name, "", :placeholder => "Введите имя семьи..", class: "form-control" %>
+			  <%= submit_tag "Create", class: "btn btn-danger" %>
+			<% end %>
 		<% end %>
+	</div>
+
+	<br>
+	<%= form_tag("/families/search", method: "post", remote: true, id: "search" ) do %>
+	  <%= label_tag(:f, "Найти семью:", class: "form-control-label") %>
+	  <%= text_field_tag :f, "", :placeholder => "Введите имя семьи..", class: "form-control" %>
+	  <%= submit_tag "Search", class: "btn btn-info" %>
 	<% end %>
-</div>
 
-<br>
-<%= form_tag("/families/search", method: "post", remote: true, id: "search" ) do %>
-  <%= label_tag(:f, "Найти семью:") %>
-  <%= text_field_tag :f, "", :placeholder => "Введите имя семьи.." %>
-  <%= submit_tag "Search" %>
-<% end %>
-
-<p >Результат поиска:</p>
-<div id="search_rezult">
-	
-</div>
+	<p >Результат поиска:</p>
+	<div id="search_rezult">
+		
+	</div>
