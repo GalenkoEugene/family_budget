@@ -1,6 +1,6 @@
 <% if @families.present? %>
   <% @families.each do |f| %>
-	<p>#<%= f.id  %>  "<%= f.name  %>" <span> + </span></p>  
+	<p>#<%= f.id  %>  "<%= f.name  %>" <button type="button" class="btn btn-secondary btn-sm">join</button></p>  
   <% end %>
 <% else %>
   <p>There are no names containing the term(s) .</p>

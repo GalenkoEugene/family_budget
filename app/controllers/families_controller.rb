@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-
+  
   def search
   	@families = Family.search(params[:f])
   	
@@ -15,9 +15,9 @@ class FamiliesController < ApplicationController
   	respond_to do |format|
       if @family.save
       	current_user.update_attributes(family_id: @family.id) 		#Tie the user to the family
-        format.html { render  html: "Success", :locals => { :family => @family } } 
+        format.html { render  html: "Твоя семья: #{@family.name}", :locals => { :family => @family } } 
       else
-        format.html { render html: "Error, can not save... reload page and try again" }
+        format.html { render html: "Error, can not save... reload page and try again, name can`t be blank!", status: 400}
       end
 	end
   end

@@ -14,7 +14,7 @@ gem 'sqlite3'
 gem 'puma'
 gem 'devise', '4.2.0'
 gem 'sass-rails'
-
+gem 'bootstrap'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views

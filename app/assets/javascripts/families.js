@@ -26,12 +26,16 @@ $(document).ready(function() {
 		  url: $(this).attr('action'),
 		  data: {family: {name: f_name}},
 		    success: function(r) {
-		    	alert(r);        
+		    	// family_add_show  //remove children and add name of new family
+		    	$(".family_add_show").children().remove();
+		    										//add tag for append r
+		    	$(".family_add_show").append(r);
+		    	        
 		    }         
 		})
 		  .error(function (a) {
 		    //current_project_title.text(old_project_name_for_current_project);
-		    alert('error');
+		    alert("Error, can not save... reload page and try again, name can`t be blank!");
 		  });
 		  e.preventDefault();
 	});
